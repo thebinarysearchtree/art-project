@@ -1,0 +1,14 @@
+{
+  "name": "art-project",
+  "version": "0.1.0",
+  "description": "An art project.",
+  "author": "Andrew Jones",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
