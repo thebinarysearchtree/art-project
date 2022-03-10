@@ -1,15 +1,13 @@
-import { makeArt, ElementArt, html } from '../artwork/index.js';
-
-const { div } = html;
+import { makeArt, ElementArt, elements } from '../artwork/index.js';
 
 class SecondsTimer extends ElementArt {
   render() {
     let seconds = 0;
 
-    const root = div();
+    const { div } = elements;
 
     const tick = () => {
-      root.innerText = `Seconds: ${seconds}`;
+      div.innerText = `Seconds: ${seconds}`;
       seconds++;
     };
 
@@ -20,7 +18,7 @@ class SecondsTimer extends ElementArt {
       return () => clearInterval(intervalId);
     };
 
-    return root;
+    return div;
   }
 }
 

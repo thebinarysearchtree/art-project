@@ -36,4 +36,4 @@ router.add('/hello', ({ name }) => hello(name));
 router.add('/timer', () => timer());
 router.add('/todo', () => todo());
 
-Router.start();
+router.start();
