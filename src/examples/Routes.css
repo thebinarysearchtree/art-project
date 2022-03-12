@@ -1,0 +1,21 @@
+.root {
+  display: flex;
+}
+
+.side-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+.video {
+  border-radius: 3px;
+  width: 600px;
+  height: 300px;
+  background-color: #ddd;
+}

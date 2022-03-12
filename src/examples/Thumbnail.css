@@ -1,0 +1,31 @@
+.root {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+span {
+  color: grey;
+}
+
+.thumbnail {
+  border-radius: 3px;
+  background-color: grey;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.selected {
+  background-color: #ddd;
+}
