@@ -31,7 +31,7 @@ const getMovies = () => {
 class MovieRoutes extends AsyncElementArt {
   constructor() {
     super();
-    this.adoptedStyles = styles;
+    this.styles = styles;
   }
 
   async render() {

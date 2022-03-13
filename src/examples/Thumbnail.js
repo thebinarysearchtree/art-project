@@ -7,7 +7,7 @@ const span = html.span;
 class MovieThumbnail extends ElementArt {
   constructor() {
     super();
-    this.adoptedStyles = styles;
+    this.styles = styles;
   }
 
   render(movie) {

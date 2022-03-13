@@ -19,3 +19,12 @@
   height: 300px;
   background-color: #ddd;
 }
+
+h3 {
+  margin-bottom: 0px;
+}
+
+p {
+  width: 600px;
+  line-height: 1.3em;
+}
