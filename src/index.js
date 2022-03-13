@@ -16,7 +16,7 @@ const a = (href, text) => routerLink({ href, text });
 class HomePage extends ElementArt {
   constructor() {
     super();
-    this.adoptedStyles = styles;
+    this.styles = styles;
   }
 
   render() {
