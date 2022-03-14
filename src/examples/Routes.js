@@ -51,14 +51,12 @@ class MovieRoutes extends AsyncElementArt {
         thumbnails.forEach(t => t.toggleSelected(videoId));
         content.replaceChildren(video, h3(name));
       });
-
+      
       router.start();
-
       return () => router.remove();
     }
 
     root.append(content, sidePanel);
-
     return root;
   }
 }
