@@ -33,7 +33,7 @@ class HomePage extends ElementArt {
   }
 }
 
-const home = makeArt(HomePage);
+const home = makeArt(HomePage, 'home-page');
 
 router.add('/', () => home());
 router.add('/hello', ({ name }) => hello(name));

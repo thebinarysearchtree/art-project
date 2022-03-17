@@ -8,8 +8,9 @@
     "dev": "node server.js",
     "start": "npm run dev"
   },
-  "dependencies": {
+  "devDependencies": {
     "express": "^4.17.3",
-    "http-proxy-middleware": "2.0.3"
+    "http-proxy-middleware": "2.0.3",
+    "esbuild": "0.14.27"
   }
 }

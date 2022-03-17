@@ -22,6 +22,6 @@ class SecondsTimer extends ElementArt {
   }
 }
 
-const secondsTimer = makeArt(SecondsTimer);
+const secondsTimer = makeArt(SecondsTimer, 'seconds-timer');
 
 export default secondsTimer;

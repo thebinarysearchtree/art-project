@@ -61,6 +61,6 @@ class MovieRoutes extends AsyncElementArt {
   }
 }
 
-const movieRoutes = makeAsyncArt(MovieRoutes);
+const movieRoutes = makeAsyncArt(MovieRoutes, 'movie-routes');
 
 export default movieRoutes;

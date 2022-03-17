@@ -43,6 +43,6 @@ class TodoList extends ElementArt {
   }
 }
 
-const todoList = makeArt(TodoList);
+const todoList = makeArt(TodoList, 'todo-list');
 
 export default todoList;

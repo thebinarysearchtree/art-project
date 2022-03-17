@@ -23,11 +23,11 @@ export interface MakeElementOptions {
   camelToDash?: boolean;
 }
 
-export function htmlFor(label: HTMLLabelElement, input: HTMLInputElement, id: string): void;
+export function htmlFor(label: HTMLLabelElement, input: HTMLInputElement, inputId: string): void;
 export function makeElements<K extends keyof HTMLElementTagNameMap>(tag: K, options?: MakeElementOptions): { [key: string]: HTMLElementTagNameMap[K] };
 
-export function makeArt<T, K>(elementClass: { new() : T }, name?: string): (state?: K) => T;
-export function makeAsyncArt<T, K>(elementClass: { new() : T }, name?: string): (state?: K) => Promise<T>;
+export function makeArt<T, K>(elementClass: { new() : T }, name: string): (state?: K) => T;
+export function makeAsyncArt<T, K>(elementClass: { new() : T }, name: string): (state?: K) => Promise<T>;
 
 export function pushState(url: string, state?: any): void;
 

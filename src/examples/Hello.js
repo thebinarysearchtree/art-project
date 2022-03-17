@@ -8,6 +8,6 @@ class HelloWorld extends ElementArt {
   }
 }
 
-const helloWorld = makeArt(HelloWorld);
+const helloWorld = makeArt(HelloWorld, 'hello-world');
 
 export default helloWorld;
