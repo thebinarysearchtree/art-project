@@ -27,6 +27,6 @@ class MovieThumbnail extends ElementArt {
   }
 }
 
-const thumbnail = makeArt(MovieThumbnail, 'movie-thumbnail');
+const thumbnail = makeArt('movie-thumbnail', MovieThumbnail);
 
 export default thumbnail;
