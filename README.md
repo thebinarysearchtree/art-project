@@ -14,7 +14,7 @@ To bundle and minify your project, type
 ```
 npm run build
 ```
-into the command line. 
+into the command line. This will create a file called ```index.js``` in the ```build``` folder that can be used in your ```index.html```.
 
 This script assumes that your entry point is ```src/index.js```. An entry point is the main JavaScript file that runs when your application starts. The build process will also convert any css import assertions into strings, as only chrome-based browsers support import assertions at the moment. For example, 
 ```
