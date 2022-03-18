@@ -9,3 +9,18 @@ npm start
 
 open chrome at http://localhost:3000
 ```
+
+To bundle and minify your project, type
+```
+npm run build
+```
+into the command line. 
+
+This script assumes that your entry point is ```src/index.js```. An entry point is the main JavaScript file that runs when your application starts. The build process will also convert any css import assertions into strings, as only chrome-based browsers support import assertions at the moment. For example, 
+```
+import styles from HelloWorld.css assert { type: 'css' };
+```
+will be converted to 
+```
+const styles = `your css`;
+```

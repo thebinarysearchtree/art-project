@@ -5,8 +5,9 @@
   "author": "Andrew Jones",
   "type": "module",
   "scripts": {
-    "dev": "node server.js",
-    "start": "npm run dev"
+    "server": "node server.js",
+    "start": "npm run server",
+    "build": "esbuild src/index.js --bundle --minify --loader:.css=text --outfile=build/index.js"
   },
   "devDependencies": {
     "express": "^4.17.3",
