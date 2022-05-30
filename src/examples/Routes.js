@@ -1,4 +1,4 @@
-import { makeAsyncArt, AsyncElementArt, html, divs, Router } from '../artwork/index.js';
+import { makeAsyncArt, AsyncElementArt, html, divs, Router } from 'artworkjs';
 import thumbnail from './Thumbnail.js';
 import styles from './Routes.css' assert { type: 'css' };
 

@@ -1,4 +1,4 @@
-import { pushState } from './artwork/index.js';
+import { pushState } from 'artworkjs';
 import cache from './cache.js';
 import client from './client.js';
 

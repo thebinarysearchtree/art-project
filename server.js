@@ -7,9 +7,9 @@ const app = express();
 
 app.use('/api', createProxyMiddleware({ target: 'http://localhost:8080', logLevel: 'silent' }));
 
-app.use('/', express.static('src'));
+app.use('/', express.static('public'));
 
-app.get('*', (req, res) => res.sendFile(path.join(path.dirname(fileURLToPath(import.meta.url)), '/src/index.html')));
+app.get('*', (req, res) => res.sendFile(path.join(path.dirname(fileURLToPath(import.meta.url)), '/public/index.html')));
 
 const server = app.listen(3000);
 

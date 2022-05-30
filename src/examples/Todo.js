@@ -1,4 +1,4 @@
-import { makeArt, ElementArt, elements, html, setters, htmlFor, events } from '../artwork/index.js';
+import { makeArt, ElementArt, elements, html, setters, htmlFor, events } from 'artworkjs';
 
 const li = html.li;
 const setText = setters.setText;

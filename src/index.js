@@ -1,4 +1,4 @@
-import { Router, routerLink, ElementArt, makeArt, elements, html } from './artwork/index.js';
+import { Router, routerLink, ElementArt, makeArt, elements, html } from 'artworkjs';
 import hello from './examples/Hello.js';
 import timer from './examples/Timer.js';
 import todo from './examples/Todo.js';

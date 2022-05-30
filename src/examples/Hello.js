@@ -1,4 +1,4 @@
-import { makeArt, ElementArt, html } from '../artwork/index.js';
+import { makeArt, ElementArt, html } from 'artworkjs';
 
 const { div } = html;
 

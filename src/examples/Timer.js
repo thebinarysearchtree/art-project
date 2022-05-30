@@ -1,4 +1,4 @@
-import { makeArt, ElementArt, elements } from '../artwork/index.js';
+import { makeArt, ElementArt, elements } from 'artworkjs';
 
 class SecondsTimer extends ElementArt {
   render() {

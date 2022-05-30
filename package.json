@@ -7,11 +7,15 @@
   "scripts": {
     "server": "node server.js",
     "start": "npm run server",
-    "build": "esbuild src/index.js --bundle --minify --loader:.css=text --outfile=build/index.js"
+    "build": "esbuild src/index.js --bundle --minify --loader:.css=text --outfile=public/index.js",
+    "watch": "esbuild src/index.js --watch --sourcemap --bundle --minify --loader:.css=text --outfile=public/index.js"
   },
   "devDependencies": {
+    "esbuild": "0.14.27",
     "express": "^4.17.3",
-    "http-proxy-middleware": "2.0.3",
-    "esbuild": "0.14.27"
+    "http-proxy-middleware": "2.0.3"
+  },
+  "dependencies": {
+    "artworkjs": "^0.1.0"
   }
 }

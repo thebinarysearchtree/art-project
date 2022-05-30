@@ -1,4 +1,4 @@
-import { makeArt, ElementArt, divs, routerLink, html } from '../artwork/index.js';
+import { makeArt, ElementArt, divs, routerLink, html } from 'artworkjs';
 import styles from './Thumbnail.css' assert { type: 'css' };
 
 const a = (href, text) => routerLink({ href, text: text ? text : null });
