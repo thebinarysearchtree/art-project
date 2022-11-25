@@ -1,8 +1,6 @@
-import { makeAsyncArt, AsyncElementArt, html, divs, Router } from 'artworkjs';
+import { html, Router } from 'artworkjs';
 import thumbnail from './Thumbnail.js';
 import styles from './Routes.css' assert { type: 'css' };
-
-const { h3 } = html;
 
 const movies = [
   {
@@ -28,39 +26,38 @@ const getMovies = () => {
   });
 }
 
-class MovieRoutes extends AsyncElementArt {
-  constructor() {
-    super();
-    this.styles = styles;
+const routes = async () => {
+  const { root, sidePanel, content, video } = html.createMany('div');
+
+  const movies = await getMovies();
+  const thumbnails = movies.map(m => thumbnail(m));
+  sidePanel.append(...thumbnails);
+
+  const connected = () => {
+    const router = new Router();
+
+    router.add('/routes', ({ v }) => {
+      const videoId = parseInt(v, 10);
+      const movie = movies.find(m => m.id === videoId);
+
+      thumbnails.forEach(t => t.toggleSelected(videoId));
+
+      const title = html.create('h3', movie.name);
+      content.replaceChildren(video, title);
+    });
+    
+    router.start();
+    return () => router.remove();
   }
 
-  async render() {
-    const { root, sidePanel, content, video } = divs;
+  root.append(content, sidePanel);
 
-    const movies = await getMovies();
-    const thumbnails = movies.map(m => thumbnail(m));
-    sidePanel.append(...thumbnails);
-
-    this.connected = () => {
-      const router = new Router();
-
-      router.add('/routes', ({ v }) => {
-        const videoId = parseInt(v, 10);
-        const { name } = movies.find(m => m.id === videoId);
-
-        thumbnails.forEach(t => t.toggleSelected(videoId));
-        content.replaceChildren(video, h3(name));
-      });
-      
-      router.start();
-      return () => router.remove();
-    }
-
-    root.append(content, sidePanel);
-    return root;
-  }
+  return html.register({
+    root,
+    connected,
+    styles,
+    name: 'movie-routes'
+  });
 }
 
-const movieRoutes = makeAsyncArt('movie-routes', MovieRoutes);
-
-export default movieRoutes;
+export default routes;

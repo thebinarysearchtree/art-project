@@ -1,4 +1,4 @@
-import { Router, routerLink, ElementArt, makeArt, elements, html } from 'artworkjs';
+import { Router, routerLink, html } from 'artworkjs';
 import hello from './examples/Hello.js';
 import timer from './examples/Timer.js';
 import todo from './examples/Todo.js';
@@ -9,31 +9,24 @@ const root = document.getElementById('root');
 
 const router = new Router(root);
 
-const { div } = html;
-
 const a = (href, text) => routerLink({ href, text });
 
-class HomePage extends ElementArt {
-  constructor() {
-    super();
-    this.styles = styles;
-  }
+const home = () => {
+  const div = html.create('div');
 
-  render() {
-    const { div } = elements;
+  const a1 = a('/hello?name=World', 'Hello World');
+  const a2 = a('/timer', 'Timer');
+  const a3 = a('/todo', 'Todo');
+  const a4 = a('/routes?v=1', 'Routes');
 
-    const a1 = a('/hello?name=World', 'Hello World');
-    const a2 = a('/timer', 'Timer');
-    const a3 = a('/todo', 'Todo');
-    const a4 = a('/routes?v=1', 'Routes');
+  div.append(a1, a2, a3, a4);
 
-    div.append(a1, a2, a3, a4);
-
-    return div;
-  }
+  return html.register({
+    root: div,
+    styles,
+    name: 'home-page'
+  });
 }
-
-const home = makeArt('home-page', HomePage);
 
 router.add('/', () => home());
 router.add('/hello', ({ name }) => hello(name));

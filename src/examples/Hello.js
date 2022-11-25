@@ -1,13 +1,5 @@
-import { makeArt, ElementArt, html } from 'artworkjs';
+import { html } from 'artworkjs';
 
-const { div } = html;
+const hello = (name) => html.create('div', `Hello ${name}`);
 
-class HelloWorld extends ElementArt {
-  render(name) {
-    return div(`Hello ${name}`);
-  }
-}
-
-const helloWorld = makeArt('hello-world', HelloWorld);
-
-export default helloWorld;
+export default hello;

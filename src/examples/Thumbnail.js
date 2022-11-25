@@ -1,32 +1,27 @@
-import { makeArt, ElementArt, divs, routerLink, html } from 'artworkjs';
+import { routerLink, html } from 'artworkjs';
 import styles from './Thumbnail.css' assert { type: 'css' };
 
 const a = (href, text) => routerLink({ href, text: text ? text : null });
-const span = html.span;
 
-class MovieThumbnail extends ElementArt {
-  constructor() {
-    super();
-    this.styles = styles;
-  }
+const thumbnail = (movie) => {
+  const { root, thumbnail, details } = html.createMany('div');
 
-  render(movie) {
-    const { root, thumbnail, details } = divs;
+  const year = html.create('span', movie.year);
+  
+  const link = a(`/routes?v=${movie.id}`);
 
-    const { id, name, year } = movie;
+  const toggleSelected = (selectedId) => movie.id === selectedId ? root.className = 'root selected' : root.className = 'root';
 
-    this.toggleSelected = (selectedId) => selectedId === id ? root.className = 'root selected' : root.className = 'root';
-    
-    details.append(name, span(year));
-    root.append(thumbnail, details);
+  link.append(root);
+  root.append(thumbnail, details);
+  details.append(movie.name, year);
 
-    const link = a(`/routes?v=${id}`);
-    link.append(root);
-
-    return link;
-  }
+  return html.register({
+    root: link,
+    props: { toggleSelected },
+    styles,
+    name: 'movie-thumbnail'
+  });
 }
-
-const thumbnail = makeArt('movie-thumbnail', MovieThumbnail);
 
 export default thumbnail;

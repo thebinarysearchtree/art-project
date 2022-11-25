@@ -1,6 +1,6 @@
 {
   "name": "art-project",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "An art project.",
   "author": "Andrew Jones",
   "type": "module",
@@ -10,11 +10,11 @@
     "watch": "node build.js"
   },
   "devDependencies": {
-    "esbuild": "0.14.46",
-    "express": "^4.18.1",
+    "esbuild": "0.15.15",
+    "express": "4.18.2",
     "http-proxy-middleware": "2.0.6"
   },
   "dependencies": {
-    "artworkjs": "^0.7.0"
+    "artworkjs": "0.8.0"
   }
 }

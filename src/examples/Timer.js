@@ -1,27 +1,27 @@
-import { makeArt, ElementArt, elements } from 'artworkjs';
+import { html } from 'artworkjs';
 
-class SecondsTimer extends ElementArt {
-  render() {
-    let seconds = 0;
+const timer = () => {
+  let seconds = 0;
 
-    const { div } = elements;
+  const div = html.create('div');
 
-    const tick = () => {
-      div.innerText = `Seconds: ${seconds}`;
-      seconds++;
-    };
+  const tick = () => {
+    div.innerText = `Seconds: ${seconds}`;
+    seconds++;
+  };
 
-    tick();
+  tick();
 
-    this.connected = () => {
-      const intervalId = setInterval(tick, 1000);
-      return () => clearInterval(intervalId);
-    };
+  const connected = () => {
+    const intervalId = setInterval(tick, 1000);
+    return () => clearInterval(intervalId);
+  };
 
-    return div;
-  }
+  return html.register({
+    root: div,
+    connected,
+    name: 'seconds-timer'
+  });
 }
 
-const secondsTimer = makeArt('seconds-timer', SecondsTimer);
-
-export default secondsTimer;
+export default timer;
