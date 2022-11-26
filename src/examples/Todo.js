@@ -1,21 +1,11 @@
 import { html, htmlFor } from 'artworkjs';
 
-const text = {
-  title: 'Todo',
-  label: 'What needs to be done?',
-  button: 'Add #1'
-}
-
 const todo = () => {
-  const div = html.create('div');
+  const { div, input, form, ul, h3, label, button } = html.create();
 
-  const title = html.create('h3', text.title);
-  const label = html.create('label', text.label);
-  const button = html.create('button', text.button);
-
-  const input = html.create('input');
-  const form = html.create('form');
-  const ul = html.create('ul');
+  h3.innerText = 'Todo';
+  label.innerText = 'What needs to be done?';
+  button.innerText = 'Add #1';
 
   htmlFor(label, input, 'new-todo');
 
@@ -34,7 +24,7 @@ const todo = () => {
     input.value = '';
   });
 
-  div.append(title, ul, form);
+  div.append(h3, ul, form);
 
   return html.register({
     root: div,
