@@ -10,8 +10,6 @@ const root = document.getElementById('root');
 
 const router = new Router(root);
 
-router.setNotFound(html.create('p', `This won't work`));
-
 const a = (href, text) => routerLink({ href, text });
 
 const home = () => {
