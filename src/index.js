@@ -3,6 +3,7 @@ import hello from './examples/Hello.js';
 import timer from './examples/Timer.js';
 import todo from './examples/Todo.js';
 import routes from './examples/Routes.js';
+import login from './examples/Login.js';
 import styles from './HomePage.css' assert { type: 'css' };
 
 const root = document.getElementById('root');
@@ -18,8 +19,9 @@ const home = () => {
   const a2 = a('/timer', 'Timer');
   const a3 = a('/todo', 'Todo');
   const a4 = a('/routes?v=1', 'Routes');
+  const a5 = a('/login', 'Login');
 
-  div.append(a1, a2, a3, a4);
+  div.append(a1, a2, a3, a4, a5);
 
   return html.register({
     root: div,
@@ -33,9 +35,10 @@ router.add('/hello', ({ name }) => hello(name));
 router.add('/timer', () => timer());
 router.add('/todo', () => todo());
 router.add(/\/routes/, () => {
-  const loading = div('Loading...');
+  const loading = html.create('div', 'Loading...');
   routes().then((r) => loading.replaceWith(r));
   return loading;
 });
+router.add('/login', () => login());
 
 router.start();

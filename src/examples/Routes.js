@@ -27,7 +27,7 @@ const getMovies = () => {
 }
 
 const routes = async () => {
-  const { root, sidePanel, content, video } = html.createMany('div');
+  const { root, sidePanel, content, video } = html.createStyled('div');
 
   const movies = await getMovies();
   const thumbnails = movies.map(m => thumbnail(m));

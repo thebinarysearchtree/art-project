@@ -13,11 +13,16 @@ const todo = () => {
   const label = html.create('label', text.label);
   const button = html.create('button', text.button);
 
+  const input = html.create('input');
+  const form = html.create('form');
+  const ul = html.create('ul');
+
   htmlFor(label, input, 'new-todo');
 
   form.append(label, input, button);
 
   form.addEventListener('submit', (e) => {
+    e.preventDefault();
     const todo = input.value;
     if (todo.length === 0) {
       return;

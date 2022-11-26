@@ -9,5 +9,3 @@ npm start
 
 open chrome at http://localhost:3000
 ```
-
-Typing ```npm run watch``` into the command-line will create an incremental build process that will watch for any changes that you make to the code.

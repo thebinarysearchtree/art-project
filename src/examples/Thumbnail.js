@@ -1,10 +1,10 @@
 import { routerLink, html } from 'artworkjs';
 import styles from './Thumbnail.css' assert { type: 'css' };
 
-const a = (href, text) => routerLink({ href, text: text ? text : null });
+const a = (href, text) => routerLink({ href, innerText: text ? text : null });
 
 const thumbnail = (movie) => {
-  const { root, thumbnail, details } = html.createMany('div');
+  const { root, thumbnail, details } = html.createStyled('div');
 
   const year = html.create('span', movie.year);
   

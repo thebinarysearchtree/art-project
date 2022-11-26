@@ -24,7 +24,6 @@ const plugin = {
 
 esbuild.build({
   entryPoints: ['src/index.js'],
-  watch: true,
   sourcemap: true,
   bundle: true,
   minify: true,
