@@ -1,14 +1,13 @@
 import { html, FormInput } from 'artworkjs';
 
-const input = (labelText, props) => {
-  const label = html.create('label', labelText);
-  const input = html.create('input');
-  const root = html.create('div');
+const input = (labelText) => {
+  const { div, label, input } = html.create();
+  label.innerText = labelText;
 
-  root.append(label, input);
+  div.append(label, input);
 
   return html.register({
-    root,
+    root: div,
     props: { input },
     name: 'basic-input',
     extends: FormInput
