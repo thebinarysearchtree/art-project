@@ -1,5 +1,5 @@
 import { routerLink, html } from 'artworkjs';
-import styles from './Thumbnail.css' assert { type: 'css' };
+import styles from './thumbnail.css' assert { type: 'css' };
 
 const a = (href, text) => routerLink({ href, innerText: text ? text : null });
 

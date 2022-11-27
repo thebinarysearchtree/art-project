@@ -1,10 +1,10 @@
 import { Router, routerLink, html } from 'artworkjs';
-import hello from './examples/Hello.js';
-import timer from './examples/Timer.js';
-import todo from './examples/Todo.js';
-import routes from './examples/Routes.js';
-import login from './examples/Login.js';
-import styles from './HomePage.css' assert { type: 'css' };
+import hello from './examples/hello.js';
+import timer from './examples/timer.js';
+import todo from './examples/todo.js';
+import routes from './examples/routes.js';
+import login from './examples/login.js';
+import styles from './home.css' assert { type: 'css' };
 
 const root = document.getElementById('root');
 

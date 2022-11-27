@@ -1,8 +1,11 @@
-import { html, FormInput } from 'artworkjs';
+import { html, FormInput, pushState } from 'artworkjs';
 
 const input = (labelText) => {
   const { div, label, input } = html.create();
   label.innerText = labelText;
+  if (labelText === 'password') {
+    input.type = labelText;
+  }
 
   div.append(label, input);
 

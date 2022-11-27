@@ -1,6 +1,6 @@
 import { html, Router } from 'artworkjs';
-import thumbnail from './Thumbnail.js';
-import styles from './Routes.css' assert { type: 'css' };
+import thumbnail from './thumbnail.js';
+import styles from './routes.css' assert { type: 'css' };
 
 const movies = [
   {
