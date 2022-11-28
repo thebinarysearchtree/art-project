@@ -42,8 +42,7 @@ const login = () => {
 
   return html.register({
     root: form,
-    name: 'basic-form',
-    styles: 'form { height: 1000px; }'
+    name: 'basic-form'
   });
 }
 
