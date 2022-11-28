@@ -30,7 +30,7 @@ const login = () => {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     if (username.value === 'artwork' && password.value === 'artwork') {
-      pushState('/?login=true');
+      pushState('/');
     }
     else {
       error.innerText = 'Incorrect login';
