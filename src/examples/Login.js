@@ -23,17 +23,27 @@ const login = () => {
   const button = html.create('button', 'Login');
 
   const form = html.create('form');
-  form.append(username, password, button);
+  const error = html.create('p');
+
+  form.append(username, password, button, error);
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    console.log(username.value);
-    console.log(password.value);
+    if (username.value === 'artwork' && password.value === 'artwork') {
+      pushState('/?login=true');
+    }
+    else {
+      error.innerText = 'Incorrect login';
+      const clear = (element) => element.input.addEventListener('keydown', () => error.innerText = '', { once: true  });
+      clear(username);
+      clear(password);
+    }
   });
 
   return html.register({
     root: form,
-    name: 'basic-form'
+    name: 'basic-form',
+    styles: 'form { height: 1000px; }'
   });
 }
 
