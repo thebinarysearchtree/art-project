@@ -103,7 +103,9 @@ const signOut = () => {
 };
 
 export default {
-  user,
+  get user() {
+    return user;
+  },
   postData,
   getData,
   uploadFiles,
