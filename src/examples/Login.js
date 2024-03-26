@@ -20,10 +20,9 @@ const input = (labelText) => {
 const login = () => {
   const username = input('username');
   const password = input('password');
-  const button = html.create('button', 'Login');
+  const button = html.button('Login');
 
-  const form = html.create('form');
-  const error = html.create('p');
+  const { form, p: error } = html.create();
 
   form.append(username, password, button, error);
 

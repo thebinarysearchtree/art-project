@@ -27,7 +27,7 @@ const getMovies = () => {
 }
 
 const routes = async () => {
-  const { root, sidePanel, content, video } = html.createStyled('div');
+  const { root, sidePanel, content, video } = html.styled('div');
 
   const movies = await getMovies();
   const thumbnails = movies.map(m => thumbnail(m));
@@ -42,7 +42,7 @@ const routes = async () => {
 
       thumbnails.forEach(t => t.toggleSelected(videoId));
 
-      const title = html.create('h3', movie.name);
+      const title = html.h3(movie.name);
       content.replaceChildren(video, title);
     });
     

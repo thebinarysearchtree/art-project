@@ -1,5 +1,5 @@
 import { html } from 'artworkjs';
 
-const hello = (name) => html.create('div', `Hello ${name}`);
+const hello = (name) => html.div(`Hello ${name}`);
 
 export default hello;

@@ -3,7 +3,7 @@ import { html } from 'artworkjs';
 const timer = () => {
   let seconds = 0;
 
-  const div = html.create('div');
+  const div = html.div();
 
   const tick = () => {
     div.innerText = `Seconds: ${seconds}`;

@@ -16,7 +16,7 @@ const todo = () => {
     if (input.value.length === 0) {
       return;
     }
-    const item = html.create('li', input.value);
+    const item = html.li(input.value);
     ul.append(item);
     
     button.innerText = `Add #${ul.childElementCount + 1}`;
