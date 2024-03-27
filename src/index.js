@@ -4,7 +4,7 @@ import timer from './examples/Timer.js';
 import todo from './examples/Todo.js';
 import routes from './examples/Routes.js';
 import login from './examples/Login.js';
-import styles from './home.css' assert { type: 'css' };
+import styles from './home.css' with { type: 'css' };
 
 const root = document.getElementById('root');
 
